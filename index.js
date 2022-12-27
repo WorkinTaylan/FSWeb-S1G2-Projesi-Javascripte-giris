@@ -20,8 +20,12 @@ Aşağıdakileri yapın:
    İPUCU: fonksiyon oluşturmaya gerek yok
 */
 
-
-
+let surucuYasi = 28
+if(surucuYasi>18) { 
+  console.log("True");
+}
+else(surucuYasi<18); { 
+  console.log("False")}
 /*
 Görev 1b - Değerler (puanlamaya dahil değildir)
 
@@ -33,9 +37,13 @@ Aşağıdakileri yapınız:
 
    İPUCU: fonksiyon oluşturmaya gerek yok
 */
-
-
-
+let birinciDeger = 100;
+let ikinciDeger = 100;
+birinciDeger===ikinciDeger
+//true
+birinciDeger = 120;
+birinciDeger===ikinciDeger
+//false 
 
 
 /*
@@ -48,9 +56,9 @@ Aşağıdakileri yapın:
 
    İPUCU: Number metoduna bakabilirsin
 */
-
-
-
+let x = "1999";
+Number(x)
+//1999
 
 /*
 Görev 1d - Çarpma
@@ -61,11 +69,12 @@ Aşağıdakileri yapın:
    3. a ve b'yi çarpıp, sonucu dönün
 */
 
-function carpma(/*buraya kodunu yazabilirsin*/){
-  /*buraya kodunu yazabilirsin*/
+let a = 2;
+let b = 3;
+function carpma(a,b){
+  return (a * b)
 }
-
-
+console.log(carpma(a,b))
 
 
 /* Görev 2 : Köpeğin Yaşı */
@@ -76,9 +85,8 @@ Aşağıdakileri yapın:
  2. Gelen değeri kullanarak köpeğin yaşını hesaplayın (insanlarda 1 yıl köpeklerde 7 yıla denk gelir)
  3. Hesaplanan köpeğin yaşını dönün.
  */
-
-function kopeginYasi(/*buraya kodunu yazabilirsin*/){
-  /*buraya kodunu yazabilirsin*/
+function kopeginYasi(x, y) {
+  return insanYasi * 7;
 }
 
 
