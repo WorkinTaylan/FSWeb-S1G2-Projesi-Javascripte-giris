@@ -39,10 +39,11 @@ Aşağıdakileri yapınız:
 */
 let birinciDeger = 100;
 let ikinciDeger = 100;
-birinciDeger===ikinciDeger
+if(birinciDeger===ikinciDeger){
+  birinciDeger = 120;
+  console.log(birinciDeger)
+}
 //true
-birinciDeger = 120;
-birinciDeger===ikinciDeger
 //false 
 
 
@@ -85,10 +86,10 @@ Aşağıdakileri yapın:
  2. Gelen değeri kullanarak köpeğin yaşını hesaplayın (insanlarda 1 yıl köpeklerde 7 yıla denk gelir)
  3. Hesaplanan köpeğin yaşını dönün.
  */
-function kopeginYasi(x, y) {
-  return insanYasi * 7;
+function kopeginYasi(yas) {
+  return  yas * 7;
 }
-
+console.log(kopeginYasi(1));
 
 
 /* Görev 3 */
@@ -114,7 +115,39 @@ OYUNUN KURALLARI: Makas Kağıdı yener| Kağıt Taşı yener | Taş Makas'ı ye
 
 function oyun(oyuncu, bilgisayar){
   /*buraya kodunu yazabilirsin*/
+  let bilgisayarSecim=(Math.random());
+  
+  if(bilgisayarSecim<0.33){
+    bilgisayar==="Taş"
+  }else if(bilgisayarSecim<0.66){
+    bilgisayar==="Kağıt"
+  }else{
+    bilgisayar==="Makas"
+  };
+
+  if(oyuncu===bilgisayar){
+    return "Beraberlik"
+  }
+  if(oyuncu==="Taş" && bilgisayar==="Kağıt"){
+    return "Kaybettin!"
+  }
+  if(oyuncu==="Taş" && bilgisayar==="Makas"){
+    return "Kazandın!"
+  }
+  if(oyuncu==="Makas" && bilgisayar==="Taş"){
+    return "Kaybettin!"
+  }
+  if(oyuncu==="Makas" && bilgisayar==="Kağıt"){
+    return "Kazandın!"
+  }
+  if(oyuncu==="Kağıt" && bilgisayar==="Taş"){
+    return "Kazandın!"
+  }
+  if(oyuncu==="Kağıt" && bilgisayar==="Makas"){
+    return "Kaybettin!"
+  }
 }
+
 
 
 
@@ -128,10 +161,12 @@ Aşağdakileri milDonusturucu fonksiyonunu kullanarak yapın:
 3. Mil değerini geri dönün
 */
 
-function milDonusturucu(/*buraya kodunu yazabilirsin*/){
-  /*buraya kodunu yazabilirsin*/
+let km= 5
+function milDonusturucu(km){
+ const factor = 0.621371;
+  return (km * factor)
 }
-
+console.log (milDonusturucu(km) + 'mil')
 
 
 //Görev 4b - Santimetreden Feet
@@ -141,12 +176,13 @@ Aşağıdakileri feetDonusturucu fonsiyonunu kullanarak yapın:
 2. Aldığınız bu değeri feet'e dönüştürün
 3. feet değerini geri dönün
 */
-
-function feetDonusturucu(/*buraya kodunu yazabilirsin*/){
-  /*buraya kodunu yazabilirsin*/
+let cm = 10
+function feetDonusturucu(cm){
+  const factor = 30.48;
+  return (cm / factor)
 }
 
-
+console.log(feetDonusturucu(cm) + 'ft')
 
 /* Görev 5 : 5 küçük maymun yatakta zıplamış şarkısını çocuklar için hazırladığımızı varsayalım. https://www.youtube.com/watch?v=e4EJ34xnlxk */
 
@@ -161,8 +197,11 @@ Aşağıdakileri cocukSarkisi fonksiyonunda yapın:
 4. Bu döngüde, her seferinde cocukSarkisi fonsiyonu çalışsın ve console.log'a dönen metni yazdırsın.
 */
 
-function cocukSarkisi(/*buraya kodunu yazabilirsin*/){
-      /*buraya kodunu yazabilirsin*/
+function cocukSarkisi(Sayi) {
+  return Sayi+ " "+ "küçük maymun yatakta zıplamış, biri düşüp başını çarpmış, Anne doktoru aramış, Doktor çok kızmış: Bir daha yatakta zıplamak yok!";
+}
+for (let i=3; i>1; i--) {
+console.log(cocukSarkisi(i));
 }
 
 
@@ -181,8 +220,18 @@ Aşağdakileri notHesapla fonksiyonunda yapın.
  dönün
 */
 
-function notHesapla(/*buraya kodunu yazabilirsin*/){
-/*buraya kodunu yazabilirsin*/
+function notHesapla(sonuc){
+if (sonuc>89 && sonuc<=100){
+  return 'A aldın';
+} else if(sonuc>79 && sonuc<=89) {
+  return 'B aldın';
+} else if (sonuc>69 && sonuc<=79){
+  return 'C aldın';
+} else if (sonuc>59 && sonuc<=69) {
+  return 'D aldın';
+} else {
+  return 'F aldın';
+}
 }
 
 
@@ -198,11 +247,17 @@ Aşağıdakileri sesliHarfSayaci fonskiyonunda yapın.
 İPUCU - .includes() methoduna bakabilirsin. (https://www.w3schools.com/jsref/jsref_includes.asp)
 */
 
-
-function sesliHarfSayaci(/*buraya kodunu yazabilirsin*/) {
-  /*buraya kodunu yazabilirsin*/
+function sesliHarfSayaci2(kelime) {
+  let sayac = 0;
+  const vowels = ["a", "e", "i", "o", "u"];
+  let kucukHarfKelime = kelime.toLowerCase();
+  for (const i in kucukHarfKelime) {
+    if (vowels.includes(kucukHarfKelime[i])) sayac++;
+  }
+	return sayac;
 }
 
+console.log(sesliHarfSayaci2('TaylanAcikgoz'))
 
 
 /* Lütfen bu satırın alt tarafını değiştirmeyin */
